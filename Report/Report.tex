@@ -44,10 +44,10 @@ Stock price forecasting, Vietnamese banks, VCB, BID, CTG, Linear Regression, ARI
 \label{sec:introduction}
 The stock market refers to the collection of markets and ex-change centers where economic activities like buying, selling,and deploying shares of publicly held companies take place.Such financial practices are conducted through institutionalized formal exchanges through over‐the‐counter marketplaces that function under a defined set of regulations. The stock market is a very dynamic and uncertain field, so the stock market prediction naturally becomes a burning topic. Due to the advancement of computational power in recent times, pre-dicting the stock market has been much faster and accurate.Artificial Intelligence and machine learning models play a crucial role in predicting stock prices and, hence, deter-mining an accurate result \cite{b1} \\
 
-This study chooses the Ho Chi Minh Stock Exchange (HOSE) in VietNam, including three different stock market of three VietNamese Banks. There are many algorithms and techniques that help us predict prices. In this paper, we will use Linear Regression, LSTM, RNN, GRU, N-HITS models to predict the stock prices of VietcomBank, BIDV, VietinBank for the next 30 days \\
+This study chooses the Ho Chi Minh Stock Exchange (HOSE) in VietNam, including three different stock market of three VietNamese Banks. There are many algorithms and techniques that help us predict prices. In this paper, we will use Linear Regression, LSTM, RNN, GRU, MLP models to predict the stock prices of VietcomBank, BIDV, VietinBank for the next 30 days \\
 
 \section{Related Works}
-This section reviews relevant studies that explore the application of mathematical attributes for stock price prediction. In this study, we will use the following 8 algorithms: Linear regression, ARIMA, RNN, GRU, LSTM, N-HiTS, Nadam, Adadelta to forecast stock prices in Vietnam. In which Nadam \& Adadelta are two optimal algorithms.
+This section reviews relevant studies that explore the application of mathematical attributes for stock price prediction. In this study, we will use the following 8 algorithms: Linear regression, ARIMA, RNN, GRU, LSTM, MLP, Nadam, Adadelta to forecast stock prices in Vietnam. In which Nadam \& Adadelta are two optimal algorithms.
 
 \textit{A Multi Parameter Forecasting for Stock Time Series Data Using LSTM and Deep Learning Model}, research by Shahzad Zaheer et al. In this article, they use LTSM, Deep Learning Model to forecast stock prices. But what's special here is that the model takes the original stock data and gives two parameters: closing price and high price for the next day. This proposed method outperforms existing stock price forecasting methods and is considered to be the most accurate and suitable for short-term forecasting. \cite{b2} 
 
@@ -162,22 +162,77 @@ Last, the I part is Integrated, and d is the number of differences (order) requi
 \[If d=2: \Delta Y_t=\left(Y_t - Y_{t-1}\right) - \left(Y_{t-1} - Y_{t-2}\right)\]
 \\
 After combining them, we will have the ARIMA (p, d, q) express as follow:
-\[\Delta Y_t = \mu + \varphi_1Y_{t-1} + \varphi_2Y_{t-2} + ... + \varphi_pY_{t-p}+ \theta_1\varepsilon_{t-1} + \theta_2\varepsilon_{t-2} + ... + \theta_p\varepsilon_{t-p} + \varepsilon_t\]
+\begin{multline}
+\Delta Y_t = \mu + \varphi_1 Y_{t-1} + \varphi_2 Y_{t-2} + \cdots + \varphi_p Y_{t-p} \\
++ \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \cdots + \theta_p \varepsilon_{t-p} + \varepsilon_t
+\end{multline}
 
-% \section{Result}
-% Kết quả mẫu ---- Xóa dòng này
-% \subsection{Evaluation Methods}
-% \textbf{Mean Percentage Absolute Error} (MAPE): is the average percentage error in a set of predicted values.\\
-% \[MAPE=\frac{100\%}{n}  \sum_{i=1}^{n} |y_i-\hat{y_i} |  = 1 \]\\
-% \textbf{Root Mean Squared Error} (RMSE): is the square root of average value of squared error in a set of predicted values.\\
-% \[RMSE=\sqrt{\sum_{i=1}^{n} \frac{(\hat{y_i}-y_i )^2}{n} }\]\\
-% \textbf{Mean Absolute Error} (MSLE):is the relative difference between the log-transformed actual and predicted values.\\
-% \[MSLE=\frac{1}{n}\sum_{i=1}^{n}(log(1+\hat{y_i})-log(log(1+y_i))^2\]
-% Where: \\
-% 	\indent\textbullet\ \(n\) is the number of observations in the dataset.\\
-% 	\indent\textbullet\ \(y_i\)  is the true value.\\
-% 	\indent\textbullet\ \(\hat{y_i}\) is the predicted value.
-% \subsection{VCB Dataset} 
+\subsection{GRU} 
+Gated recurrent units(GRU) are a gating mechanism in recurrent neural networks. The GRU is like a long short-term memory (LSTM) with a gating mechanism to input or forget certain features,but lacks a context vector or output gate, resulting in fewer parameters than LSTM.GRU's performance on certain tasks of polyphonic music modeling, speech signal modeling and natural language processing was found to be similar to that of LSTM.
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{bibliography/GRU.svg.png}    
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+
+\subsection{RNN} 
+Recurrent Neural Network(RNN) is a type of Neural Network where the output from the previous step is fed as input to the current step. In traditional neural networks, all the inputs and outputs are independent of each other. Still, in cases when it is required to predict the next word of a sentence, the previous words are required and hence there is a need to remember the previous words. Thus RNN came into existence, which solved this issue with the help of a Hidden Layer.
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{bibliography/RNN.png}    
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\subsection{LSTM} 
+Long Short-Term Memory (LSTM) networks are a specialized type of recurrent neural network (RNN) designed to address the issue of learning from long sequences of data. LSTMs achieve this through memory cells and gates, which regulate information flow, allowing the network to selectively retain or discard information from previous time steps. This selective memory enables LSTMs to effectively model long-term dependencies in sequential data, making them valuable for applications like time series forecasting and natural language processing.
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{bibliography/LSTM.png}    
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+\subsection{MLP} 
+Multilayer Perceptrons (MLPs) are a type of artificial neural network with multiple layers of interconnected nodes. They learn through a process called backpropagation, where errors are propagated backward to adjust connection weights and improve predictions. MLPs are versatile tools for tasks like classification, regression, and pattern recognition. However, they can be prone to overfitting and may struggle with vanishing gradients in deep architectures. Despite these limitations, MLPs remain a fundamental building block for many modern deep learning models.
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{bibliography/MLP.png}    
+    \label{fig:1}
+    \end{minipage}
+\end{figure}
+
+\subsection{NADAM} 
+Nadam is an optimization algorithm that combines Nesterov momentum and adaptive learning rates. It accelerates gradient descent by looking ahead to where the parameters are likely to be updated. Additionally, it adjusts the learning rate for each parameter based on past gradients. This combination often leads to faster and more stable convergence in neural network training, making it a popular choice for various deep learning tasks.
+\subsection{ADADELTA} 
+Adadelta optimization is a stochastic gradient descent method that is based on adaptive learning rate per dimension to address two drawbacks:\\
+\indent\textbullet\ The continual decay of learning rates throughout training.
+\indent\textbullet\ The need for a manually selected global learning rate.
+
+Adadelta is a more robust extension of Adagrad that adapts learning rates based on a moving window of gradient updates, instead of accumulating all past gradients. This way, Adadelta continues learning even when many updates have been done. Compared to Adagrad, in the original version of Adadelta you don't have to set an initial learning rate. In this version, the initial learning rate can be set, as in most other Keras optimizers.
+
+
+
+\section{Result}
+
+\subsection{Evaluation Methods}
+\[MAPE=\frac{100\%}{n}  \sum_{i=1}^{n} |y_i-\hat{y_i} |  = 1 \]\\
+\textbf{Root Mean Squared Error} (RMSE): is the square root of average value of squared error in a set of predicted values.\\
+\[RMSE=\sqrt{\sum_{i=1}^{n} \frac{(\hat{y_i}-y_i )^2}{n} }\]\\
+\textbf{Mean Absolute Error} (MSLE):is the relative difference between the log-transformed actual and predicted values.\\
+\[MSLE=\frac{1}{n}\sum_{i=1}^{n}(log(1+\hat{y_i})-log(log(1+y_i))^2\]
+Where: \\
+	\indent\textbullet\ \(n\) is the number of observations in the dataset.\\
+	\indent\textbullet\ \(y_i\)  is the true value.\\
+	\indent\textbullet\ \(\hat{y_i}\) is the predicted value.
+\subsection{VCB Dataset} 
 % \begin{table}[H]
 %     \centering
 %     \begin{tabular}{|c|c|c|c|c|}
@@ -207,15 +262,24 @@ After combining them, we will have the ARIMA (p, d, q) express as follow:
 %     \label{vcbresult}
 % \end{table}
 
-% \begin{figure}[H]
-%   \centering
-%   \begin{minipage}{0.8\linewidth}
-%     \centering
-%     \includegraphics[width=\linewidth]{bibliography/LN_VCB91.png}
-%     \caption{Linear model's result with 9:1 splitting proportion}
-%     \label{fig8}
-%   \end{minipage}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/MLP_8_2.jpg}
+    \caption{MLP model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/vcb8-2.png}
+    \caption{LSTM model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
 % \begin{figure}[H]
 %   \centering
 %   \begin{minipage}{0.8\linewidth}
@@ -279,12 +343,12 @@ After combining them, we will have the ARIMA (p, d, q) express as follow:
 %     \label{bagginggru}
 %   \end{minipage}
 % \end{figure}
-% \subsection{MBB dataset} 
+\subsection{BID dataset} 
 % \begin{table}[H]
 %     \centering
 %     \begin{tabular}{|c|c|c|c|c|}
 %          \hline
-%          \multicolumn{5}{|c|}{\textbf{MBB Dataset's Evaluation}}\\
+%          \multicolumn{5}{|c|}{\textbf{BID Dataset's Evaluation}}\\
 %          \hline
 %          \centering Model & Training:Testing & RMSE & MAPE (\%) & MSLE\\
 %          \hline
@@ -309,15 +373,24 @@ After combining them, we will have the ARIMA (p, d, q) express as follow:
 %     \label{mbbresult}
 % \end{table}
 
-% \begin{figure}[H]
-%   \centering
-%   \begin{minipage}{0.8\linewidth}
-%     \centering
-%     \includegraphics[width=\linewidth]{bibliography/LN_MBB73.png}
-%     \caption{Linear model's result with 7:3 splitting proportion}
-%     \label{fig15}
-%   \end{minipage}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/MLP_8_2_BID.jpg}
+    \caption{MLP model's result with 8:2 splitting proportion}
+    \label{fig15}
+  \end{minipage}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/bid8-2.png}
+    \caption{LSTM model's result with 8:2 splitting proportion}
+    \label{fig15}
+  \end{minipage}
+\end{figure}
 % \begin{figure}[H]
 %   \centering
 %   \begin{minipage}{0.8\linewidth}
@@ -358,8 +431,8 @@ After combining them, we will have the ARIMA (p, d, q) express as follow:
 %   \centering
 %   \begin{minipage}{0.8\linewidth}
 %     \centering
-%     \includegraphics[width=\linewidth]{bibliography/DLM_MBB91.png}
-%     \caption{DLM model's result with 9:1 splitting proportion}
+%     \includegraphics[width=\linewidth]{bibliography/MLP/MLP_8_2.jpg}
+%     \caption{MLP model's result with 8:2 splitting proportion}
 %     \label{fig20}
 %   \end{minipage}
 % \end{figure}
@@ -381,7 +454,7 @@ After combining them, we will have the ARIMA (p, d, q) express as follow:
 %     \label{mbbbggg}
 %   \end{minipage}
 % \end{figure}
-% \subsection{BIDV dataset} 
+\subsection{CTG dataset} 
 % \begin{table}[H]
 %     \centering
 %     \begin{tabular}{|c|c|c|c|c|}
@@ -407,19 +480,28 @@ After combining them, we will have the ARIMA (p, d, q) express as follow:
 %          \multirow{2}{*}{BaggingGRU} & 7:3 & 941.7588 &  1.7384 &  0.0005 \\ & 8:2 & 939.7588 &  1.6546 &  0.0005 \\ & \textbf{9:1} & \textbf{936.8374} & \textbf{1.6273} & \textbf{0.0005}\\
 %          \hline
 %     \end{tabular}
-%     \caption{BIDV Dataset's Evaluation}
+%     \caption{CTG Dataset's Evaluation}
 %     \label{mbbresult}
 % \end{table}
 
-% \begin{figure}[H]
-%   \centering
-%   \begin{minipage}{0.8\linewidth}
-%     \centering
-%     \includegraphics[width=\linewidth]{bibliography/LN_BIDV91.png}
-%     \caption{Linear model's result with 9:1 splitting proportion}
-%     \label{fig22}
-%   \end{minipage}
-% \end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/MLP_8_2_CTG.jpg}
+    \caption{MLP model's result with 8:2 splitting proportion}
+    \label{fig22}
+  \end{minipage}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/ctg8-2.png}
+    \caption{LSTM model's result with 8:2 splitting proportion}
+    \label{fig22}
+  \end{minipage}
+\end{figure}
 % \begin{figure}[H]
 %   \centering
 %   \begin{minipage}{0.8\linewidth}
@@ -483,22 +565,27 @@ After combining them, we will have the ARIMA (p, d, q) express as follow:
 %     \label{fig28}
 %   \end{minipage}
 % \end{figure}
-% \section{Conclusion}
-% Kết luận mẫu ---- Xóa dòng này
-% \subsection{Summary}
-% In the achievement of forecasting stock prices, the exploration of diverse methodologies, ranging from traditional statistical models to advanced machine learning algorithms, has been aimed. Among the performed models, Linear Regression (LR), Auto Regressive Integrated Moving Average (ARIMA), Support Vector Regression (SVR), Seasonal Auto Regression Integrated Moving Average (SARIMA), Dynamic Linear Model (DLM), Bagging – GRU, and Simple Exponential Smoothing (SES), it becomes evident that Support Vector Regression (SVR), Gated Recurrent Unit (GRU), and Bagging GRU emerge as the most promising and effective models for predicting stock prices.\\
-% The intricacies of stock price forecasting, rooted in the complexity and unpredictability of financial markets, demand models that can capture nuanced patterns and relationships within the data. Support Vector Regression (SVR) showcases its efficacy in handling intricate relationships, providing robust predictions. Gated Recurrent Unit (GRU) models, with their ability to capture sequential dependencies, exhibit notable performance in forecasting stock prices. The introduction of ensemble learning through Bagging GRU further refines the predictive capabilities, offering a collective insight that surpasses individual models.\\
-% As evidenced by the evaluation metrics, including RMSE, MAPE, and MSLE, the SVR, GRU, and Bagging GRU models consistently demonstrate superior performance across various aspects of forecasting accuracy. Their adaptability to handle the inherent uncertainties of stock markets positions them as formidable tools for investors and analysts seeking reliable predictions.
-% \subsection{Future Considerations}
-% In our future research, it is crucial to prioritize further optimization of the previously mentioned models. This optimization effort should specifically focus on:\\
-% \indent\textbullet\ Enhancing the accuracy of the model. While the above algorithms have demonstrated promising results in predicting stock prices, there is a need to further improve the model's accuracy to ensure more precise forecasting outcomes.\\
-% \indent\textbullet\ Exploring alternative machine learning algorithms or ensemble techniques. Ensemble techniques, such as combining multiple models or using various ensemble learning methods, can also improve the robustness and accuracy of the forecasts.\\
-% \indent\textbullet\ Researching new forecasting models. The field of forecasting continuously evolves, with new algorithms and models being researched and developed. It is crucial to stay updated with these approaches and explore new forecasting models that offer improved accuracy and performance. \\
-% By continuously exploring and incorporating new features, data sources, and modeling techniques, we can strive for ongoing optimization of the forecasting models and enhance their ability to predict stock prices with greater precision and reliability.
-% \section*{Acknowledgment}
-% \addcontentsline{toc}{section}{Acknowledgment}
-% First and foremost, we would like to express our sincere gratitude to \textbf{Assoc. Prof. Dr. Nguyen Dinh Thuan} and \textbf{Mr. Nguyen Minh Nhut} for their exceptional guidance, expertise, and invaluable feedback throughout the research process. Their mentorship and unwavering support have been instrumental in shaping the direction and quality of this study. Their profound knowledge, critical insights, and attention to detail have significantly contributed to the success of this research.
-% \\This research would not have been possible without the support and contributions of our mentors. We would like to extend our heartfelt thanks to everyone involved for their invaluable assistance, encouragement, and belief in our research. Thank you all for your invaluable assistance and encouragement.
+\section{Conclusion}
+After employing six algorithms: ARIMA, Linear Regression,RNN,LSTM, GRU, MLP on three different datasets about stock prices BID, CTG and VCB, we found that the model MLP with Nadam is the best one and gives the best results. superior results based on three measures RMSE, MAPE, MAD on all six algorithms.  
+There are also some difficulties such as the training time of 
+the model, the number of parameters used, so in the future we 
+will improve the model for good and optimal results in terms 
+of training time. the number of parameters used,...to 
+improved results
+\subsection{Summary}
+In the achievement of forecasting stock prices, the exploration of diverse methodologies, ranging from traditional statistical models to advanced machine learning algorithms, has been aimed. Among the performed models, Linear Regression (LR), Auto Regressive Integrated Moving Average (ARIMA), Support Vector Regression (SVR), Seasonal Auto Regression Integrated Moving Average (SARIMA), Dynamic Linear Model (DLM), Bagging – GRU, and Simple Exponential Smoothing (SES), it becomes evident that Support Vector Regression (SVR), Gated Recurrent Unit (GRU), and Bagging GRU emerge as the most promising and effective models for predicting stock prices.\\
+The intricacies of stock price forecasting, rooted in the complexity and unpredictability of financial markets, demand models that can capture nuanced patterns and relationships within the data. Support Vector Regression (SVR) showcases its efficacy in handling intricate relationships, providing robust predictions. Gated Recurrent Unit (GRU) models, with their ability to capture sequential dependencies, exhibit notable performance in forecasting stock prices. The introduction of ensemble learning through Bagging GRU further refines the predictive capabilities, offering a collective insight that surpasses individual models.\\
+As evidenced by the evaluation metrics, including RMSE, MAPE, and MSLE, the SVR, GRU, and Bagging GRU models consistently demonstrate superior performance across various aspects of forecasting accuracy. Their adaptability to handle the inherent uncertainties of stock markets positions them as formidable tools for investors and analysts seeking reliable predictions.
+\subsection{Future Considerations}
+In our future research, it is crucial to prioritize further optimization of the previously mentioned models. This optimization effort should specifically focus on:\\
+\indent\textbullet\ Enhancing the accuracy of the model. While the above algorithms have demonstrated promising results in predicting stock prices, there is a need to further improve the model's accuracy to ensure more precise forecasting outcomes.\\
+\indent\textbullet\ Exploring alternative machine learning algorithms or ensemble techniques. Ensemble techniques, such as combining multiple models or using various ensemble learning methods, can also improve the robustness and accuracy of the forecasts.\\
+\indent\textbullet\ Researching new forecasting models. The field of forecasting continuously evolves, with new algorithms and models being researched and developed. It is crucial to stay updated with these approaches and explore new forecasting models that offer improved accuracy and performance. \\
+By continuously exploring and incorporating new features, data sources, and modeling techniques, we can strive for ongoing optimization of the forecasting models and enhance their ability to predict stock prices with greater precision and reliability.
+\section*{Acknowledgment}
+\addcontentsline{toc}{section}{Acknowledgment}
+First and foremost, we would like to express our sincere gratitude to \textbf{Assoc. Prof. Dr. Nguyen Dinh Thuan} and \textbf{Mr. Nguyen Minh Nhut} for their exceptional guidance, expertise, and invaluable feedback throughout the research process. Their mentorship and unwavering support have been instrumental in shaping the direction and quality of this study. Their profound knowledge, critical insights, and attention to detail have significantly contributed to the success of this research.
+\\This research would not have been possible without the support and contributions of our mentors. We would like to extend our heartfelt thanks to everyone involved for their invaluable assistance, encouragement, and belief in our research. Thank you all for your invaluable assistance and encouragement.
 
 %% UNCOMMENT these lines below (and remove the 2 commands above) if you want to embed the bibliografy.
 \begin{thebibliography}{00}
