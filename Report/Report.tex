@@ -33,7 +33,7 @@ This paper conducts an analysis and stock price forecasts for VCB, BID, and CTG,
 \end{abstract}
 
 \begin{keywords}
-Stock price forecasting, Vietnamese banks, VCB, BID, CTG, Linear Regression, ARIMA, RNN, GRU, LSTM, N-HITS, Nadam, Adadelta.
+Stock price forecasting, Vietnamese banks, VCB, BID, CTG, Linear Regression, ARIMA, RNN, GRU, LSTM, MLP, Nadam, Adadelta.
 \end{keywords}
 
 \titlepgskip=-15pt
@@ -262,24 +262,131 @@ Where: \\
 %     \label{vcbresult}
 % \end{table}
 
+% Arima model
+
 \begin{figure}[H]
   \centering
   \begin{minipage}{0.8\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{bibliography/MLP/MLP_8_2.jpg}
-    \caption{MLP model's result with 8:2 splitting proportion}
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/VCB(7-3).png}
+    \caption{ARIMA model's result with 7:3 splitting proportion}
     \label{fig8}
   \end{minipage}
 \end{figure}
+
 \begin{figure}[H]
   \centering
   \begin{minipage}{0.8\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{bibliography/LSTM/vcb8-2.png}
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/VCB(8-2).png}
+    \caption{ARIMA model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/VCB(9-1).png}
+    \caption{ARIMA model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+% LSTM
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/VCB 7-3.png}
+    \caption{LSTM model's result with 7:3 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/VCB 8-2.png}
     \caption{LSTM model's result with 8:2 splitting proportion}
     \label{fig8}
   \end{minipage}
 \end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/VCB 9-1.png}
+    \caption{LSTM model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+% MLP
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/VCB 7-3.png}
+    \caption{MLP model's result with 7:3 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/VCB 8-2.png}
+    \caption{MLP model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/VCB 9-1.png}
+    \caption{MLP model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+% \begin{figure}[H]
+%   \centering
+%   \begin{minipage}{0.8\linewidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{bibliography/LSTM/vcb8-2.png}
+%     \caption{LSTM model's result with 8:2 splitting proportion}
+%     \label{fig8}
+%   \end{minipage}
+% \end{figure}
+
+% \begin{figure}[H]
+%   \centering
+%   \begin{minipage}{0.8\linewidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{bibliography/MLP/MLP_8_2.jpg}
+%     \caption{MLP model's result with 8:2 splitting proportion}
+%     \label{fig8}
+%   \end{minipage}
+% \end{figure}
+
+% \begin{figure}[H]
+%   \centering
+%   \begin{minipage}{0.8\linewidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{bibliography/LSTM/vcb8-2.png}
+%     \caption{LSTM model's result with 8:2 splitting proportion}
+%     \label{fig8}
+%   \end{minipage}
+% \end{figure}
 % \begin{figure}[H]
 %   \centering
 %   \begin{minipage}{0.8\linewidth}
@@ -344,6 +451,103 @@ Where: \\
 %   \end{minipage}
 % \end{figure}
 \subsection{BID dataset} 
+
+% Arima model
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/BID(7-3).png}
+    \caption{ARIMA model's result with 7:3 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/BID(8-2).png}
+    \caption{ARIMA model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/BID(9-1).png}
+    \caption{ARIMA model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+% LSTM
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/BID 7-3.png}
+    \caption{LSTM model's result with 7:3 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/BID 8-2.png}
+    \caption{LSTM model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/BID 9-1.png}
+    \caption{LSTM model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+% MLP
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/BID 7-3.png}
+    \caption{MLP model's result with 7:3 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/BID 8-2.png}
+    \caption{MLP model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/BID 9-1.png}
+    \caption{MLP model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
 % \begin{table}[H]
 %     \centering
 %     \begin{tabular}{|c|c|c|c|c|}
@@ -373,24 +577,6 @@ Where: \\
 %     \label{mbbresult}
 % \end{table}
 
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.8\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{bibliography/MLP/MLP_8_2_BID.jpg}
-    \caption{MLP model's result with 8:2 splitting proportion}
-    \label{fig15}
-  \end{minipage}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.8\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{bibliography/LSTM/bid8-2.png}
-    \caption{LSTM model's result with 8:2 splitting proportion}
-    \label{fig15}
-  \end{minipage}
-\end{figure}
 % \begin{figure}[H]
 %   \centering
 %   \begin{minipage}{0.8\linewidth}
@@ -455,6 +641,104 @@ Where: \\
 %   \end{minipage}
 % \end{figure}
 \subsection{CTG dataset} 
+
+% Arima model
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/CTG(7-3).png}
+    \caption{ARIMA model's result with 7:3 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/CTG(8-2).png}
+    \caption{ARIMA model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/ARIMA/CTG(9-1).png}
+    \caption{ARIMA model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+% LSTM
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/CTG 7-3.png}
+    \caption{LSTM model's result with 7:3 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/CTG 8-2.png}
+    \caption{LSTM model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/LSTM/CTG 9-1.png}
+    \caption{LSTM model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+% MLP
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/CTG 7-3.png}
+    \caption{MLP model's result with 7:3 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/CTG 8-2.png}
+    \caption{MLP model's result with 8:2 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.8\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{bibliography/MLP/CTG 9-1.png}
+    \caption{MLP model's result with 9:1 splitting proportion}
+    \label{fig8}
+  \end{minipage}
+\end{figure}
+
+
 % \begin{table}[H]
 %     \centering
 %     \begin{tabular}{|c|c|c|c|c|}
@@ -484,24 +768,6 @@ Where: \\
 %     \label{mbbresult}
 % \end{table}
 
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.8\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{bibliography/MLP/MLP_8_2_CTG.jpg}
-    \caption{MLP model's result with 8:2 splitting proportion}
-    \label{fig22}
-  \end{minipage}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \begin{minipage}{0.8\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{bibliography/LSTM/ctg8-2.png}
-    \caption{LSTM model's result with 8:2 splitting proportion}
-    \label{fig22}
-  \end{minipage}
-\end{figure}
 % \begin{figure}[H]
 %   \centering
 %   \begin{minipage}{0.8\linewidth}
