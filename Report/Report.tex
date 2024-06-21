@@ -63,7 +63,7 @@ The aforementioned studies provide a foundation for understanding the strengths 
 
 \section{Materials and Methodology}
 \subsection{Dataset}
-The historical stock price of Joint Stock Commercial Bank for Foreign Trade of Vietnam (VCB), Bank for Investment and Development of Vietnam (BIDV) and Military Commercial Joint Stock Bank (CTG) from 01/01/2015 to 01/06/2024 will be applied. The data contains column such as Date, Price, Open, High, Low, Close, Adj Close, Volume. As the goal is to forecast high and low prices, data relating to column “High", "Low" (VND) will be processed.
+The historical stock price of Joint Stock Commercial Bank for Foreign Trade of Vietnam (VCB), Bank for Investment and Development of Vietnam (BIDV) and Military Commercial Joint Stock Bank (CTG) from 01/01/2015 to 01/06/2024 will be applied. The data contains column such as Date, Price, Open, High, Low, Close, Adj Close, Volume. As the goal is to forecast "Close" prices, data relating to column "Close" (VND) will be processed.
 
 \subsection{Descriptive Statistics}
 \begin{table}[H]
@@ -148,7 +148,7 @@ Last, the I part is Integrated, and d is the number of differences (order) requi
     d=0: & \quad \Delta Y_t = Y_t \\
     d=1: & \quad \Delta Y_t = Y_t - Y_{t-1} \\
     d=2: & \quad \Delta Y_t = \left(Y_t - Y_{t-1}\right) - \left(Y_{t-1} - Y_{t-2}\right)
-\end{align*}5
+\end{align*}
 
 After combining them, we will have the ARIMA (p, d, q) express as follow:
 \begin{align*}
