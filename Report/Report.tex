@@ -47,17 +47,17 @@ The stock market refers to the collection of markets and ex-change centers where
 This study chooses the Ho Chi Minh Stock Exchange (HOSE) in VietNam, including three different stock market of three VietNamese Banks. There are many algorithms and techniques that help us predict prices. In this paper, we will use Linear Regression, LSTM, RNN, GRU, MLP models to predict the stock prices of VietcomBank, BIDV, VietinBank for the next 30 days
 
 \section{Related Works}
-This section reviews relevant studies that explore the application of mathematical models for stock price prediction. In this study, we evaluate the performance of six algorithms: Linear regression, ARIMA, RNN, GRU, LSTM, and MLP (using Nadam and Adadelta optimizers) for forecasting stock prices in Vietnam.
+This section reviews relevant studies that explore the application of mathematical models for stock price prediction. In this study, we evaluate the performance of six algorithms: Linear regression, ARIMA, RNN, GRU, LSTM, and MLP (using Nadam and Adadelta optimizers) for forecasting stock prices in Vietnam. 
 
-\textit{A Multi Parameter Forecasting for Stock Time Series Data Using LSTM and Deep Learning Model} by Shahzad Zaheer et al. introduces a method using LSTM and deep learning to predict stock prices, focusing on predicting both closing and high prices for the next day. Their approach outperforms existing methods in accuracy for short-term forecasting. \cite{b2}
+A Multi Parameter Forecasting for Stock Time Series Data Using LSTM and Deep Learning Model by Shahzad Zaheer et al. introduces a method using LSTM and deep learning to predict stock prices, focusing on predicting both closing and high prices for the next day. Their approach outperforms existing methods in accuracy for short-term forecasting. \cite{b2} 
 
-\textit{A Comparative Research of Stock Price Prediction of Selected Stock Indexes and the Stock Market by Using ARIMA Model} by Nayab Minhaj et al. demonstrates the effectiveness of the ARIMA model in predicting Johnson \& Johnson (JNJ) stock prices in the short term, showing superiority over traditional methods. \cite{b3}
+A Comparative Research of Stock Price Prediction of Selected Stock Indexes and the Stock Market by Using ARIMA Model by Nayab Minhaj et al. demonstrates the effectiveness of the ARIMA model in predicting Johnson \& Johnson (JNJ) stock prices in the short term, showing superiority over traditional methods. \cite{b3} 
 
-\textit{Nadam: A novel long term solar photovoltaic power forecasting approach using LSTM with Nadam optimizer} by Jatin Sharma et al. compares LSTM models using various optimizers and shows that the Nadam optimizer significantly enhances forecasting accuracy compared to other methods. \cite{b4}
+Nadam: A novel long term solar photovoltaic power forecasting approach using LSTM with Nadam optimizer by Jatin Sharma et al. compares LSTM models using various optimizers and shows that the Nadam optimizer significantly enhances forecasting accuracy compared to other methods. \cite{b4} 
 
-\textit{ADADELTA: An Adaptive Learning Rate Method} by Matthew D. Zeiler introduces Adadelta, a robust per-dimension learning rate method that adapts dynamically during training, demonstrating effectiveness across different datasets and architectures. \cite{b5}
+ADADELTA: An Adaptive Learning Rate Method by Matthew D. Zeiler introduces Adadelta, a robust per-dimension learning rate method that adapts dynamically during training, demonstrating effectiveness across different datasets and architectures. \cite{b5} 
 
-\textit{Stock Price Prediction Using Deep Learning Techniques} by Lee J. et al. explores various deep learning models, including MLP, for stock price prediction. The study highlights the effectiveness of MLP models, particularly when using advanced optimizers like Nadam and Adadelta, in capturing complex patterns in stock data and achieving high prediction accuracy. \cite{b6}
+Stock Price Prediction Using Deep Learning Techniques by Lee J. et al. explores various deep learning models, including MLP, for stock price prediction. The study highlights the effectiveness of MLP models, particularly when using advanced optimizers like Nadam and Adadelta, in capturing complex patterns in stock data and achieving high prediction accuracy. \cite{b6}
 
 The aforementioned studies provide a foundation for understanding the strengths and weaknesses of different models and optimizers in stock price prediction. In our research, we aim to build on these insights by comparing the performance of Linear regression, ARIMA, RNN, GRU, LSTM, and MLP models using Nadam and Adadelta optimizers, specifically in the context of the Vietnamese stock market.
 
@@ -157,7 +157,8 @@ After combining them, we will have the ARIMA (p, d, q) express as follow:
 \end{align*}
 
 \subsection{GRU}
-GRU is another version of the RNN algorithm that solves the problems of vanishing and exploding gradients in traditional RNN when learning long-term dependencies. GRU consists of three main components (Reset gate, Update gate and Output) \cite{b9}
+GRU is another version of the RNN algorithm that solves the problems of vanishing and exploding gradients in traditional RNN when learning long-term dependencies. GRU consists of three main components (Reset gate, Update gate and Output).Those gates enable the GRU to update and choose selectively
+information from previous time steps, allowing it to capture long-term dependencies in sequences \cite{b9}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.45\textwidth}
@@ -171,15 +172,15 @@ GRU is another version of the RNN algorithm that solves the problems of vanishin
     \item Reset gate is used to decide what information from the past should be forgotten by using a sigmoid function.\\
         \[r_t = \sigma(W_r [h_{t-1}, x_t] + b_r) \]
     
-    \item Update gate just like a combination of forget gate and input gate in LSTM, it decides how much information from the previous state will be retained and how much new information will be added.\\
+    \item Update gate just like a combination of forget gate and input gate in LSTM, it combined with the current input at a specific timestep to decide how much information from the previous state will be retained and how much new information will be added.\\
         \[ z_t = \sigma(W_z [h_{t-1}, x_t] + b_z) \]
-    \item The equation of the output.\\
+    \item The output using the current memory state  and is typically followed by an activation function.\\
         \[ \tilde{h}_t = \tanh(W_h [r_t h_{t-1}, x_t]) \]
         \[ h_t = (1 - z_t) h_{t-1} + z_t \tilde{h}_t \]
 \end{itemize}
 
 \subsection{RNN} 
-Recurrent Neural Networks (RNNs) are a type of deep learning model designed for processing sequential data. They maintain an internal state (memory) that allows them to capture temporal dependencies. This makes RNNs ideal for tasks such as natural language processing, speech recognition, and time series analysis. \\
+RNN is called recurrent neural network because the current output of a sequence is also related to the previous output. The network will memorize  the  previous  information and apply  it  to  the calculation of  the  current  output and the input of the hidden layer not only  includes the output of  the input layer It also  includes  the output of the  hidden layer at the previous moment. RNN can process sequence data of any length. \\
 The basic structure of an RNN involves a recurrent layer where sequential inputs are processed at each time step. At each time step \(t\), the RNN receives the input \(x_t\) and the hidden state from the previous time step \(h_{t-1}\), then calculates the current hidden state \(h_t\) and the output \(\hat{y}_t\). \cite{b10}
 \[
 h_t = \phi(W_{xh} x_t + W_{hh} h_{t-1} + b_h)
@@ -239,7 +240,18 @@ The following formulas are used to compute the various components of the LSTM ce
 These elements are crucial for the LSTM to process sequential data by updating the cell state and hidden state through various gates.
 
 \subsection{MLP} 
-The MLP model is a supervised artificial neural network typically consisting of three main parts: an input layer, hidden layers, and an output layer. The input layer receives input vectors and passes each data point to neurons in the hidden layer. Neurons in the hidden layer use a summation function and an activation function. \cite{b14}
+The MLP model is a supervised artificial neural network consisting of three main parts: an input layer, hidden layers, and an output layer. The input layer receives input features from the dataset, with each neuron representing an attribute. Neurons in the hidden layer process inputs using weighted sums and non-linear activation functions like ReLU, sigmoid, and tanh to learn complex patterns. The output layer produces the final prediction, using softmax for classification and a linear function for regression. \cite{b14}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{bibliography/MLP/model_struct_3.png} 
+    \label{fig:1}
+    \caption{ The structure of a 3 layer MLP \cite{b16}}
+    \end{minipage}
+\end{figure}
+
 \[
 y = \varphi(xw + b)
 \]
@@ -261,16 +273,6 @@ Where:
     \caption{Single-neuron perceptron model \cite{b15}}
     \end{minipage}
 \end{figure}
-
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.45\textwidth}
-    \centering
-    \includegraphics[width=0.8\textwidth]{bibliography/MLP/model_struct_2.png} 
-    \label{fig:1}
-    \caption{Structure of the multilayer perceptron (MLP) model \cite{b16}}
-    \end{minipage}
-\end{figure} 
 
 \subsection{NADAM} 
 Nadam is an extension to the Adam optimization algorithm. It combines two techniques leveraging the benefits of both approaches \\
@@ -557,7 +559,7 @@ Nadam is an extension to the Adam optimization algorithm. It combines two techni
          \hline
          \multirow{3}{*}{LinearRegression} 
          & 7:3 & 582.08 & 1.614 & 425.579 \\ 
-         & 8:2 & \textbf{548.029} & \textbf{1.466} & \textbf{394.24} \\ 
+         & \textbf{8:2} & \textbf{548.029} & \textbf{1.466} & \textbf{394.24} \\ 
          & 9:1 & 578.528 & 1.328 & 410.543\\
          \hline
          \multirow{3}{*}{ARIMA} 
@@ -744,9 +746,9 @@ Learning Models: CNN, RNN, LSTM, GRU,
     \url{https://link.springer.com/article/10.1007/s42979-021-00815-1}
 
 \bibitem{b16} 
-    FARHAD MORTEZAPOUR SHIRI,
-    A Comprehensive Overview and Comparative Analysis on Deep Learning Models: CNN, RNN, LSTM, GRU,
-    \url{https://arxiv.org/pdf/2305.17473}
+    Shiksha Online,
+    What is a multilayer perceptron (MLP) neural network?,
+    \url{https://www.shiksha.com/online-courses/articles/understanding-multilayer-perceptron-mlp-neural-networks/}
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%
