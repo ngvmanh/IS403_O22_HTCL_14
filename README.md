@@ -1,9 +1,10 @@
-﻿# PTDLKD-UIT-PROJECT
+﻿# PROJECT: USING DEEP LEARNING MODELS WITH OPTIMIZATION ALGORITHM AND STATISTICAL MODELS TO FORECAST THE STOCK PRICE OF THREE VIETNAMESE BANKS
+ 
 ## Team Members
 | Name                  | Student ID | Role   |
 |-----------------------|------------|--------|
-| Trần Quốc Khang       | 21522200   | Leader |
-| Ngô Văn Mạnh          | 21522328   | Member |
+| Trần Quốc Khang       | 21522200   | Member |
+| Ngô Văn Mạnh          | 21522328   | Leader |
 | Nguyễn Ngọc Thành     | 21522600   | Member |
 
 ## Installation
@@ -17,6 +18,7 @@ cd IS403_O22_HTCL_14
 ```
 
 ## Project folder structure
+```
 IS403_O22_HTCL_14/
 │
 ├── README.md
@@ -26,3 +28,4 @@ IS403_O22_HTCL_14/
 │   ├── images/
 │   ├── report.pdf
 │   └── report.tex
+```
